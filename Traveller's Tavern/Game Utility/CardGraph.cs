@@ -60,6 +60,8 @@ namespace gameutil
             {
                 return false;
             }
+
+            // WAIT THERE CAN BE TWO OR MORE EDGES BETWEEN 2 NODES???
         }
 
         public bool AddCardToNode(Card card, I id)
@@ -78,7 +80,18 @@ namespace gameutil
             return false;
         }
 
-        public void AddNode(I id, )
+        public bool AddNode(string name, I id)
+        {
+            // If the node trying to be created already exists, return false
+            if (Nodes.TryGetValue(id, out Node? node))
+            {
+                return false;
+            }
+
+            // If the node doesn't exist, create the new node and return true
+            Nodes.Add(id, new Node(name, id));
+            return true;
+        }
 
         private class Edge
         {
@@ -95,12 +108,14 @@ namespace gameutil
 
         private class Node
         {
+            public string Name;
+            public I Identifier;
             public HashSet<Card> Cards = new HashSet<Card>();
             public List<Edge> Edges = new List<Edge>();
-            public I Identifier;
 
-            public Node(I identifier)
+            public Node(string name, I identifier)
             {
+                Name = name;
                 Identifier = identifier;
             }
         }
