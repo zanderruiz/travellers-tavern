@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gameutil
 {
-    internal class Tavern
+    public class Tavern
     {
         public Dictionary<int, Player> Players;
         public Stack<Drink> DrinkDeck;
