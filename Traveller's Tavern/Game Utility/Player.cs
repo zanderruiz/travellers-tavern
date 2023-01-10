@@ -12,6 +12,8 @@ namespace gameutil
 
         public bool Alive = true;
 
+        public Character Character { get; private set; }
+
         // Players start with default 10 gold in a normal game
         public int Gold = 10;
 
@@ -29,7 +31,39 @@ namespace gameutil
 
         public Stack<Drink> DrinkPile;
 
-        // TODO: CONSTRUCTORS
+        public Player(int id, string name, Character character)
+        {
+            ID = id;
+            Name = name;
+            Character = character;
+
+            Random rng = new Random();
+            List<Card> shuffledCards = character.CardDeck.OrderBy(a => rng.Next()).ToList();
+            CardDeck = new Stack<Card>(shuffledCards);
+
+            Hand = new HashSet<Card>();
+            CardDiscard = new Stack<Card>(shuffledCards);
+            DrinkPile = new Stack<Drink>();
+        }
+
+        public Player(int id, string name, Character character, int gold, int vitality, int intox)
+        {
+            ID = id;
+            Name = name;
+            Character = character;
+
+            Gold = gold;
+            Vitality = vitality;
+            Intox= intox;
+
+            Random rng = new Random();
+            List<Card> shuffledCards = character.CardDeck.OrderBy(a => rng.Next()).ToList();
+            CardDeck = new Stack<Card>(shuffledCards);
+
+            Hand = new HashSet<Card>();
+            CardDiscard = new Stack<Card>(shuffledCards);
+            DrinkPile = new Stack<Drink>();
+        }
 
         /// <summary>
         /// Moves a card from the player's card deck to the player's hand.
