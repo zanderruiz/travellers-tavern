@@ -57,6 +57,11 @@ namespace gameutil
         }
     }
 
+    public class ActionCard : Card
+    {
+
+    }
+
     public class SometimesCard : Card
     {
         public delegate bool CardConditionChecker(Card card);
