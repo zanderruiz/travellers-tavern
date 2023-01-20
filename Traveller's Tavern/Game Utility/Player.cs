@@ -204,5 +204,15 @@ namespace gameutil
                 CardDeck.Push(shuffledCards[i]);
             }
         }
+
+        internal Player CreateCopy()
+        {
+            return new Player(ID, Name, Character, Gold, Vitality, Intox);
+        }
+
+        internal void RestoreState(Player prevState)
+        {
+
+        }
     }
 }
