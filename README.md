@@ -1,6 +1,6 @@
 # Traveller's Tavern
 
-Traveller's Tavern is an online multiplayer game based on the board game [Red Dragon Inn](https://slugfestgames.com/rdifamily/) in which players assume the identities of characters at an tavern after a long journey's end. Each player aims to be the last one standing and sober at the tavern by using their character's unique card deck to get other characters so weak, intoxicated, or bankrupt that they must leave the tavern.
+Traveller's Tavern is an online multiplayer game based on the board game [Red Dragon Inn](https://slugfestgames.com/rdifamily/) in which players assume the identities of characters at a tavern after a long journey's end. Each player aims to be the last one standing and sober at the tavern by using their character's unique card deck to get other characters so weak, intoxicated, or bankrupt that they must leave the tavern.
 
 ## Currently in the works:
 
